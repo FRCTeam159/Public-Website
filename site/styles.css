@@ -1,15 +1,4 @@
-/* Global reset-ish without classes; keep it minimal to retain browser defaults */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-html {
-    color-scheme: light dark;
-    hanging-punctuation: first last;
-}
-
+/* CSS for the root viewable element */
 body {
     margin: 0;
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
@@ -17,15 +6,17 @@ body {
     line-height: 1.6;
     color: #0b1320;
     background: #ffffff;
-    --brand: #17449e; /* deep alpine blue */
-    --brand-2: #00a3d7; /* accent/cyan */
+    --brand: #17449e;
+    --brand-2: #00a3d7;
     --ink-muted: #445065;
     --bg-soft: #f5f7fb;
     --border: #e2e8f0;
     --maxw: 1100px;
 }
 
-/* Typography */
+
+
+/* Text size, colors, and decoration */
 h1,
 h2,
 h3,
@@ -34,24 +25,23 @@ h4 {
     margin-top: 1.2em;
     margin-bottom: 0.6em;
 }
-
 p {
     margin: 0.75em 0;
     color: #243147;
 }
-
 a {
     color: var(--brand);
     text-decoration: none;
 }
-
 a:hover,
 a:focus {
     text-decoration: underline;
     text-underline-offset: 3px;
 }
 
-/* Header with horizontal nav */
+
+
+/* Styles to make the Nav-Bar appear correctly */
 header {
     position: sticky;
     top: 0;
@@ -60,7 +50,6 @@ header {
     backdrop-filter: saturate(140%) blur(6px);
     border-bottom: 1px solid var(--border);
 }
-
 header > a {
     display: inline-flex;
     align-items: center;
@@ -69,19 +58,16 @@ header > a {
     padding: 12px 16px;
     color: #0b1320;
 }
-
 header > a img {
     display: block;
     width: 40px;
     height: 40px;
     object-fit: contain;
 }
-
 header > nav {
     max-width: var(--maxw);
     margin: 0 auto;
 }
-
 header > nav > ul {
     list-style: none;
     display: flex;
@@ -89,28 +75,28 @@ header > nav > ul {
     gap: 6px 18px;
     align-items: center;
     justify-content: flex-end;
-    margin: -52px 16px 0; /* Pull nav into the header row to the right */
+    margin: -52px 16px 0;
     padding: 0 0 12px;
 }
-
 header > nav > ul > li > a {
     display: inline-block;
     padding: 10px 8px;
     border-radius: 6px;
     color: #0b1320;
 }
-
 header > nav > ul > li > a:hover,
 header > nav > ul > li > a:focus {
     background: var(--bg-soft);
     text-decoration: none;
 }
 
-/* Hero section with image and overlay text */
+
+
+
+/* The "Hero Image" at the start of a page*/
 main > section:first-of-type {
     background: #000;
 }
-
 main > section:first-of-type > figure {
     position: relative;
     display: block;
@@ -119,7 +105,6 @@ main > section:first-of-type > figure {
     min-height: 42vh;
     overflow: hidden;
 }
-
 main > section:first-of-type > figure > img {
     width: 100%;
     height: 60vh;
@@ -129,7 +114,6 @@ main > section:first-of-type > figure > img {
     display: block;
     filter: saturate(110%);
 }
-
 main > section:first-of-type > figure > figcaption {
     position: absolute;
     inset: auto 0 0 0;
@@ -137,19 +121,19 @@ main > section:first-of-type > figure > figcaption {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 60%);
     color: #ffffff;
 }
-
 main > section:first-of-type h1 {
     margin: 0 0 6px;
     font-size: clamp(28px, 4.5vw, 52px);
     font-weight: 800;
     letter-spacing: -0.02em;
 }
-
 main > section:first-of-type p {
     margin: 0;
     font-size: clamp(14px, 2vw, 18px);
     color: #e8eef7;
 }
+
+
 
 /* Content container */
 main > section:nth-of-type(2) {
@@ -157,14 +141,12 @@ main > section:nth-of-type(2) {
     margin: 40px auto;
     padding: 0 16px;
 }
-
 main > section:nth-of-type(2) > h2 {
     font-size: clamp(22px, 3vw, 32px);
     border-bottom: 2px solid var(--border);
     padding-bottom: 8px;
     margin-bottom: 18px;
 }
-
 article {
     background: #fff;
     border: 1px solid var(--border);
@@ -173,13 +155,15 @@ article {
     margin: 14px 0;
     box-shadow: 0 1px 0 rgba(16, 24, 40, 0.02), 0 2px 8px rgba(16, 24, 40, 0.03);
 }
-
 article > h4 {
     margin-top: 0.2em;
     margin-bottom: 0.4em;
     color: #0b1320;
 }
 
+
+
+/* Footer styles */
 footer {
     border-top: 1px solid var(--border);
     margin-top: 48px;
@@ -187,15 +171,16 @@ footer {
     background: #fafcff;
     color: var(--ink-muted);
 }
-
 footer > p {
     max-width: var(--maxw);
     margin: 0 auto;
     text-align: center;
 }
 
-/* Responsive tweaks */
-@media (max-width: 720px) {
+
+
+/* Styles for making the mobile layout a little better */
+@media (max-width: 700px) {
     header > nav > ul {
         justify-content: center;
         margin: 0 8px 8px;
@@ -215,10 +200,4 @@ footer > p {
     article {
         padding: 14px;
     }
-}
-
-/* High-contrast focus for accessibility */
-a:focus-visible {
-    outline: 3px solid var(--brand-2);
-    outline-offset: 2px;
 }
