@@ -93,11 +93,11 @@ header > nav > ul > li > a:focus {
 
 
 
-/* The "Hero Image" at the start of a page*/
-main > section:first-of-type {
+/* The "Hero Image" style sections, which use a "figure" as their decendant*/
+main > section:has(> figure) {
     background: #000;
 }
-main > section:first-of-type > figure {
+main > section:has(> figure) > figure {
     position: relative;
     display: block;
     max-width: 100%;
@@ -105,7 +105,7 @@ main > section:first-of-type > figure {
     min-height: 42vh;
     overflow: hidden;
 }
-main > section:first-of-type > figure > img {
+main > section:has(> figure) > figure > img {
     width: 100%;
     height: 60vh;
     min-height: 380px;
@@ -114,20 +114,24 @@ main > section:first-of-type > figure > img {
     display: block;
     filter: saturate(110%);
 }
-main > section:first-of-type > figure > figcaption {
+main > section:has(> figure) > figure > figcaption {
     position: absolute;
     inset: auto 0 0 0;
     padding: 28px 20px 32px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 60%);
+    background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.6),
+            transparent 60%
+    );
     color: #ffffff;
 }
-main > section:first-of-type h1 {
+main > section:has(> figure) h1 {
     margin: 0 0 6px;
     font-size: clamp(28px, 4.5vw, 52px);
     font-weight: 800;
     letter-spacing: -0.02em;
 }
-main > section:first-of-type p {
+main > section:has(> figure) p {
     margin: 0;
     font-size: clamp(14px, 2vw, 18px);
     color: #e8eef7;
@@ -135,19 +139,19 @@ main > section:first-of-type p {
 
 
 
-/* Content container */
-main > section:nth-of-type(2) {
+/* The "article" style section, where a section has an "article" inside it*/
+main > section:has(> article) {
     max-width: var(--maxw);
     margin: 40px auto;
     padding: 0 16px;
 }
-main > section:nth-of-type(2) > h2 {
+main > section:has(> article) > h2 {
     font-size: clamp(22px, 3vw, 32px);
     border-bottom: 2px solid var(--border);
     padding-bottom: 8px;
     margin-bottom: 18px;
 }
-article {
+main > section:has(> article) > article {
     background: #fff;
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -155,7 +159,7 @@ article {
     margin: 14px 0;
     box-shadow: 0 1px 0 rgba(16, 24, 40, 0.02), 0 2px 8px rgba(16, 24, 40, 0.03);
 }
-article > h4 {
+main > section:has(> article) > article > h4 {
     margin-top: 0.2em;
     margin-bottom: 0.4em;
     color: #0b1320;
