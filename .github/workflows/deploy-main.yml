@@ -1,0 +1,28 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: site
+          branch: gh-pages
+          # Don't wipe out any in-progress PR previews living in this
+          # subdirectory of gh-pages when the production site redeploys.
+          clean-exclude: pr-preview
+          # Never force-push — previews rely on being able to add/remove
+          # their own commits on this branch without conflicting.
+          force: false

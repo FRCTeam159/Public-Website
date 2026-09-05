@@ -1,0 +1,5 @@
+# Mentors must review every change. Combined with the "require 2 approvals"
+# and "require review from Code Owners" branch protection rules on `main`,
+# this guarantees at least one of the two required approvals on every PR
+# comes from a mentor. See README.md for the full workflow.
+* @Isaak-Malers @tipsmiller @dwsindorf
