@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Outreach | Alpine Robotics</title>
+    <meta
+            name="description"
+            content="Alpine Robotics community outreach: STEM events, demos, and volunteering."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/favicon.webp" />
+</head>
+<body>
+<header>
+    <a href="/" aria-label="Home">
+        <!-- Optional: small logo left of site title -->
+        <img
+                src="assets/logo.png"
+                alt=""
+                width="525"
+                height="224"
+                decoding="async"
+                loading="eager"
+        />
+        <span>Alpine Robotics</span>
+    </a>
+    <nav aria-label="Primary">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="robot.html">Robot</a></li>
+            <li><a href="outreach.html">Outreach</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h1>Outreach</h1>
+        <p>
+            Part of our mission is bringing STEM and FIRST Robotics to our
+            wider community. Below are some of our recent events — add a new
+            post for each new event, right at the top of the list.
+        </p>
+    </section>
+
+    <!-- "Blog Alternation" pattern: each <article> starts with a <figure>,
+         so image and text lay out side by side, alternating sides every
+         other post. Copy one <article> block per outreach event. -->
+    <section>
+        <h2>Recent Community Involvement</h2>
+
+        <article>
+            <figure>
+                <img
+                        src="assets/hero.jpg"
+                        alt="Alpine Robotics students at a STEM outreach event"
+                        decoding="async"
+                        loading="lazy"
+                />
+            </figure>
+            <div>
+                <h3>Elementary School STEM Night</h3>
+                <p>
+                    Students brought last year's competition robot to our
+                    local elementary school's STEM night, running driving
+                    demos and letting kids try the controls under supervision.
+                    We talked with over 100 students and families about FIRST
+                    Robotics and how to get involved.
+                </p>
+            </div>
+        </article>
+
+        <article>
+            <figure>
+                <img
+                        src="assets/hero.jpg"
+                        alt="Alpine Robotics students volunteering at a community event"
+                        decoding="async"
+                        loading="lazy"
+                />
+            </figure>
+            <div>
+                <h3>Community Robotics Workshop</h3>
+                <p>
+                    We hosted a free introductory workshop covering basic
+                    mechanical assembly and block-based programming for
+                    middle schoolers interested in future FIRST programs
+                    (FLL and FTC).
+                </p>
+            </div>
+        </article>
+
+        <article>
+            <figure>
+                <img
+                        src="assets/hero.jpg"
+                        alt="Alpine Robotics team volunteering locally"
+                        decoding="async"
+                        loading="lazy"
+                />
+            </figure>
+            <div>
+                <h3>Local Food Bank Volunteering</h3>
+                <p>
+                    Beyond STEM outreach, the team spent a Saturday sorting
+                    and packing donations at our local food bank as part of
+                    our broader community service commitment.
+                </p>
+            </div>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <p>
+        © <span id="year"></span> Alpine Robotics. All rights reserved.
+        <a href="privacy.html">Privacy</a> ·
+        <a href="code-of-conduct.html">Code of Conduct</a>
+    </p>
+</footer>
+
+<script>
+    document.getElementById("year").textContent =
+        new Date().getFullYear().toString();
+</script>
+</body>
+</html>
