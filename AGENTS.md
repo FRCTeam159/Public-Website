@@ -145,9 +145,109 @@ Trigger: a `<section>` whose direct children include `<article>` elements.
 </section>
 ```
 Gives: centered max-width container, bordered/shadowed white cards with
-consistent spacing. Use this for any list of discrete items (news, events,
-sponsor tiers, resource links) — don't build a new list/grid pattern for
-that; reshape the content into `article` cards instead.
+consistent spacing. Use this for any list of discrete news/event items —
+don't build a new grid pattern for that; reshape the content into `article`
+cards instead. (Sponsor tiers and blog-style posts have their own more
+specific patterns below — use those instead for that kind of content.)
+
+### Carousel section
+Trigger: a `<section>` whose direct child is a `<ul>` of `<li><img></li>`.
+```html
+<section>
+  <ul>
+    <li><img src="assets/whatever.jpg" alt="..." decoding="async" loading="eager" /></li>
+    <li><img src="assets/whatever.jpg" alt="..." decoding="async" loading="lazy" /></li>
+  </ul>
+</section>
+```
+Gives: a full-bleed, horizontally swipeable image strip using pure CSS
+scroll-snap — no JavaScript. Used for the Team and Resources page banners
+(`site/team.html`, `site/resources.html`). Add/remove `<li>` slides for more
+or fewer images; each `<li>` must contain exactly one `<img>` and nothing
+else. Follow this section with a plain `<section><h1>...</h1><p>...</p></section>`
+for body copy — it needs no special markup, the base `main > section` rule
+already centers and pads it.
+
+### Blog alternation section
+Trigger: inside a `main > section:has(> article)`, an `<article>` whose
+first child is a `<figure>`. Builds on the card pattern above (still gets
+the white/bordered/shadowed card), and additionally lays the figure and a
+text block side by side, alternating sides every other `<article>`.
+```html
+<section>
+  <h2>Section Title</h2>
+  <article>
+    <figure><img src="assets/whatever.jpg" alt="..." decoding="async" loading="lazy" /></figure>
+    <div>
+      <h3>Post title</h3>
+      <p>Post body.</p>
+    </div>
+  </article>
+  <article>...</article>
+</section>
+```
+Used for the Outreach page's "Recent Community Involvement" posts
+(`site/outreach.html`) and the Robot page's season-by-season history
+(`site/robot.html`). The `<div>` around the heading/paragraph is just a
+grouping container (no class/id) so the two can act as one flex column
+next to the figure — add new posts as another `<article>` in this exact
+shape; the 1st/3rd/5th... post shows image-left, the 2nd/4th/6th... shows
+image-right, automatically.
+
+### Tiered list section
+Trigger: a `<section>` whose direct children are nested `<section>`s, each
+containing a heading and a `<ul>` of plain-text `<li>` items.
+```html
+<section>
+  <section>
+    <h2>Title Sponsors</h2>
+    <ul><li>Sponsor Name</li></ul>
+  </section>
+  <section>
+    <h2>Primary Sponsors</h2>
+    <ul><li>Sponsor Name</li></ul>
+  </section>
+  <section>
+    <h2>Helping Hands</h2>
+    <ul><li>Sponsor Name</li></ul>
+  </section>
+</section>
+```
+Gives: rows of sized "chip" pills — the first nested `<section>` renders
+largest, each one after progressively smaller. **Tier order in the markup
+controls size** (biggest tier first), not the heading text — so keep the
+most prominent tier's `<section>` first. Used for `site/sponsors.html`.
+
+### Schedule table section
+Trigger: a `<section>` whose direct child is a `<table>`.
+```html
+<section>
+  <h2>Meeting Schedule</h2>
+  <table>
+    <thead><tr><th scope="col">Day</th><th scope="col">Time</th></tr></thead>
+    <tbody><tr><td>Monday</td><td>4:00 – 6:00 PM</td></tr></tbody>
+  </table>
+</section>
+```
+Gives: a clean, full-width, bordered-row table. Used for the meeting
+schedule on `site/contact.html`. Use a real `<table>` (with `<thead>`) for
+any tabular/schedule data rather than faking rows with `<div>`s.
+
+### Contact details section
+Trigger: a `<section>` whose direct child is a `<dl>`.
+```html
+<section>
+  <h2>Location &amp; Contact</h2>
+  <dl>
+    <dt>Address</dt><dd>...</dd>
+    <dt>Email</dt><dd><a href="mailto:...">...</a></dd>
+  </dl>
+</section>
+```
+Gives: label/value pairs laid out in two aligned columns (stacks to one
+column on mobile). Used for address/email/phone on `site/contact.html`.
+Use this for any label→value list; don't reshape that kind of content into
+`article` cards or a table.
 
 ### Footer
 ```html
