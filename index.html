@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Alpine Robotics | FRC Team</title>
+    <meta
+            name="description"
+            content="Official website template for an FRC team. News, team info, outreach, and resources."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/favicon.webp" />
+</head>
+<body>
+<header>
+    <a href="/" aria-label="Home">
+        <!-- Optional: small logo left of site title -->
+        <img
+                src="assets/logo.png"
+                alt=""
+                width="525"
+                height="224"
+                decoding="async"
+                loading="eager"
+        />
+        <span>Alpine Robotics</span>
+    </a>
+    <nav aria-label="Primary">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="robot.html">Robot</a></li>
+            <li><a href="outreach.html">Outreach</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <figure>
+            <img
+                    src="assets/hero.jpg"
+                    alt="Alpine Robotics team with their FRC robot"
+                    decoding="async"
+                    loading="eager"
+            />
+            <figcaption>
+                <h1>Building Robots. Building People.</h1>
+                <p>FRC Team — Innovation, teamwork, and STEM outreach.</p>
+            </figcaption>
+        </figure>
+    </section>
+
+    <section>
+        <h2>Welcome</h2>
+        <p>
+            We are an FRC team dedicated to excellence in engineering, programming,
+            and community outreach. Explore our site to learn more about our team,
+            robot, sponsors, and how to get involved.
+        </p>
+
+        <h3>Latest News</h3>
+        <article>
+            <h4>Preseason Workshops Announced</h4>
+            <p>
+                Join us for CAD, programming, and electrical sessions throughout the
+                preseason. New members welcome!
+            </p>
+        </article>
+
+        <article>
+            <h4>Seeking Sponsors</h4>
+            <p>
+                Support our upcoming season. Your contributions help fund parts,
+                travel, and equitable access to STEM.
+            </p>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <p>
+        © <span id="year"></span> Alpine Robotics. All rights reserved.
+        <a href="privacy.html">Privacy</a> ·
+        <a href="code-of-conduct.html">Code of Conduct</a>
+    </p>
+</footer>
+
+<script>
+    document.getElementById("year").textContent =
+        new Date().getFullYear().toString();
+</script>
+</body>
+</html>
