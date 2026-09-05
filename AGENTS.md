@@ -103,10 +103,10 @@ Every page repeats this shape from `index.html`:
 ### Header / nav
 ```html
 <header>
-  <a href="/" aria-label="Home"><img src="assets/logo.png" ... /><span>Alpine Robotics</span></a>
+  <a href="index.html" aria-label="Home"><img src="assets/logo.png" ... /><span>Alpine Robotics</span></a>
   <nav aria-label="Primary">
     <ul>
-      <li><a href="/">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="page.html">Label</a></li>
     </ul>
   </nav>
@@ -115,6 +115,14 @@ Every page repeats this shape from `index.html`:
 Add new top-level pages as another `<li><a>` here. Styling (sticky bar,
 hover states, spacing) comes from `header > a`, `header > nav > ul`,
 `header > nav > ul > li > a`.
+
+**Use `href="index.html"` for Home, never `href="/"`.** This site is
+currently served from a path prefix (`/Public-Website/`, and one level
+deeper again for PR previews, `/Public-Website/pr-preview/pr-<N>/`), so an
+absolute root link 404s. A relative filename resolves correctly no matter
+how deep the site is nested — the same reasoning applies to every link and
+asset path in this repo (see how `team.html`, `assets/logo.png`, etc. are
+all written as relative paths already).
 
 ### Hero / banner section
 Trigger: a `<section>` whose direct child is a `<figure>`.
