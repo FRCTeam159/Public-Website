@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Team | Alpine Robotics</title>
+    <meta
+            name="description"
+            content="Meet the students and mentors of Alpine Robotics, our FRC team."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/favicon.webp" />
+</head>
+<body>
+<header>
+    <a href="/" aria-label="Home">
+        <!-- Optional: small logo left of site title -->
+        <img
+                src="assets/logo.png"
+                alt=""
+                width="525"
+                height="224"
+                decoding="async"
+                loading="eager"
+        />
+        <span>Alpine Robotics</span>
+    </a>
+    <nav aria-label="Primary">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="robot.html">Robot</a></li>
+            <li><a href="outreach.html">Outreach</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- "Carousel" pattern: a <ul> of <li><img></li> becomes a swipeable
+         image strip. Re-using the one photo we have as a placeholder —
+         swap in real team photos, add/remove <li> slides as needed. -->
+    <section>
+        <ul>
+            <li>
+                <img
+                        src="assets/hero.jpg"
+                        alt="Alpine Robotics team with their FRC robot"
+                        decoding="async"
+                        loading="eager"
+                />
+            </li>
+            <li>
+                <img
+                        src="assets/hero.jpg"
+                        alt="Alpine Robotics team with their FRC robot"
+                        decoding="async"
+                        loading="lazy"
+                />
+            </li>
+            <li>
+                <img
+                        src="assets/hero.jpg"
+                        alt="Alpine Robotics team with their FRC robot"
+                        decoding="async"
+                        loading="lazy"
+                />
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Meet the Team</h1>
+        <p>
+            Alpine Robotics is a student-run FRC team supported by volunteer
+            mentors. Every season, students take the lead on designing,
+            building, wiring, programming, and driving a competition robot —
+            while also running our outreach, fundraising, and media efforts.
+        </p>
+        <p>
+            Our team is organized into four sub-teams: Mechanical, Electrical,
+            Programming, and Business/Outreach. New members are welcome on any
+            sub-team, no prior experience required — mentors and returning
+            students run workshops every preseason to get everyone up to
+            speed.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>
+        © <span id="year"></span> Alpine Robotics. All rights reserved.
+        <a href="privacy.html">Privacy</a> ·
+        <a href="code-of-conduct.html">Code of Conduct</a>
+    </p>
+</footer>
+
+<script>
+    document.getElementById("year").textContent =
+        new Date().getFullYear().toString();
+</script>
+</body>
+</html>
